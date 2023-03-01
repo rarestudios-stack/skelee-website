@@ -195,7 +195,7 @@ onClick={connectWalletHandler}>Connect Wallet</button>
                     </svg>
                   </button> 
                   <button className='px-10 py-3 bg-black rounded-lg hover:bg-white hover:text-black ml-16'
-onClick={connectWalletHandler}>Mint</button>
+onClick={publicMintHandler}>Mint</button>
                 </div>
                 </>
             )    

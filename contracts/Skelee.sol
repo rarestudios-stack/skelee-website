@@ -14,16 +14,20 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
   string public baseExtension = ".json";
   string public notRevealedUri; 
 
-  uint256 public cost = 0.0125 ether;
+  uint256 public NewFriendsMintcost = 0.08 ether;
+  uint256 public cost = 0.125 ether;
   uint256 public wlCost = 0 ether;
-  uint256 public maxSupply = 8000;
-  uint256 public MaxperWallet = 1000;
+  uint256 public maxSupply = 7777;
+  uint256 public NewFriendsSupply = 1000;
+  uint256 public MaxperWallet = 5;
   uint256 public MaxperWalletWL = 1;
 
-  bool public paused = false;
-  bool public revealed = true;
+  bool public paused = true;
+  bool public revealed = false;
   bool public wlMint = false;
-  bool public publicSale = true;
+  bool public NewFriendsMint_Live = true;
+  bool public EarlyAccessMint_Live = true;
+  bool public  FreeMint_Live = true;
 
   bytes32 public merkleRoot = 0;
 
@@ -42,10 +46,41 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
         return 1;
     }
 
-  // public
-  function publicSaleMint(uint256 tokens) public payable nonReentrant {
+ // Free Mint
+  function FreeMint(uint256 tokens) publinonReentrant {
     require(!paused, "oops contract is paused");
-    require(publicSale, "Sale Hasn't started yet");
+    require( FreeMint_Live, "Sale Hasn't started yet");
+    uint256 supply = totalSupply();
+    require(tokens > 0, "need to mint at least 1 NFT");
+    require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
+    require(supply + tokens <= maxSupply, "We Soldout");
+    require(supply + tokens <= NewFriendsSupply, "New Friends mint supply reached max");
+    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFT Per Wallet exceeded");
+
+      _safeMint(_msgSender(), tokens);
+    
+  }
+
+  // New Friends Mint
+  function NewFriendsMint(uint256 tokens) public payable nonReentrant {
+    require(!paused, "oops contract is paused");
+    require(NewFriendsMint_Live, "Sale Hasn't started yet");
+    uint256 supply = totalSupply();
+    require(tokens > 0, "need to mint at least 1 NFT");
+    require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
+    require(supply + tokens <= maxSupply, "We Soldout");
+    require(supply + tokens <= NewFriendsSupply, "New Friends mint supply reached max");
+    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFT Per Wallet exceeded");
+    require(msg.value >= NewFriendsMintcost * tokens, "insufficient funds");
+
+      _safeMint(_msgSender(), tokens);
+    
+  }
+
+//  Early Access Mint
+  function EarlyAccessMint(uint256 tokens) public payable nonReentrant {
+    require(!paused, "oops contract is paused");
+    require(EarlyAccessMint_Live, "Sale Hasn't started yet");
     uint256 supply = totalSupply();
     require(tokens > 0, "need to mint at least 1 NFT");
     require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
@@ -56,6 +91,7 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
       _safeMint(_msgSender(), tokens);
     
   }
+
 /// @dev White-listed mint
     function WlMint(uint256 tokens, bytes32[] calldata merkleProof) public payable nonReentrant {
     require(!paused, "oops contract is paused");
@@ -130,8 +166,13 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
     function setMaxperWalletWL(uint256 _limit) public onlyOwner {
     MaxperWalletWL = _limit;
   }
+
   
-  function setCost(uint256 _newCost) public onlyOwner {
+  function setNewFriendsMintCost(uint256 _newCost) public onlyOwner {
+    NewFriendsMintcost = _newCost;
+  }
+
+   function setCost(uint256 _newCost) public onlyOwner {
     cost = _newCost;
   }
   
@@ -142,6 +183,12 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
 
     function setMaxsupply(uint256 _newsupply) public onlyOwner {
     maxSupply = _newsupply;
+  }
+
+  
+
+    function setNewFriendsSupply(uint256 _newsupply) public onlyOwner {
+    NewFriendsSupply = _newsupply;
   }
 
  
@@ -165,8 +212,12 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
         wlMint = _state;
     }
 
-    function togglepublicSale(bool _state) external onlyOwner {
-        publicSale = _state;
+    function toggleNewFriendsMint(bool _state) external onlyOwner {
+         NewFriendsMint_Live = _state;
+    }
+
+    function toggleEarlyAccessMint(bool _state) external onlyOwner {
+          EarlyAccessMint_Live = _state;
     }
   
  
