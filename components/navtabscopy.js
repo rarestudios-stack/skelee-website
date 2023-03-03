@@ -289,8 +289,8 @@ toggleState === 4 ? (
 
 toggleState === 5 ? (
 <>
-<div className={!nav?'absolute w-full top-[90px] min-h-screen':'hidden'}>
-<div className='min-h-screen'>
+<div className={!nav?'absolute w-full top-[90px]':'hidden'}>
+<div className='h-full'>
   <FAQ/>
   </div>
   
