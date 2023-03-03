@@ -24,7 +24,7 @@ export default function FAQs() {
       <h1 className='md:text-[40px] text-[30px] font-Kanit text-white text-center uppercase font-semibold tracking-widest mb-8'> FAQ</h1>
       <Accordion open={open === 1} animate={customAnimation}  className='text-white  text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(1)}>
-          What is Skelee NFT
+          What is Skelee NFT?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
         Skelee is a collection of 8,000 unique NFTs on the Ethereum blockchain. Inspired by late-night gaming, Beeple, 3D art, and a friend that never gave up on us. We released Skelee from the underworld to show him the other side of life. Filled with gaming, friends, competitions, and augmented reality experiences, Skelee has a lot to explore.
@@ -33,10 +33,10 @@ export default function FAQs() {
       
       <Accordion open={open === 2} animate={customAnimation} className='text-white  text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(2)} className='text-white  text-[21px] text-start'>
-          What is an NFT?
+          What is Mint amount?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-        An NFT(non-fungible token) is a crypto token representing a verifiably unique entity that is mutually interchangeable.
+       7777
         </AccordionBody>
       </Accordion>
       
@@ -45,9 +45,9 @@ export default function FAQs() {
          When does the Mint start?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-          Mint has started.
+          Stay updated on our Twitter and Discord account to see when the Mint will begin.
         </AccordionBody>
-      </Accordion>
+      </Accordion>ent u
       
       <Accordion open={open === 4} animate={customAnimation} className='text-white text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(4)} className='text-white  text-[21px] text-start'>
