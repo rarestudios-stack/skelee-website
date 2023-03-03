@@ -99,23 +99,23 @@ export default function Navtabs (){
 
  <div className='w-[50%]'>
    <div className='flex items-center justify-end'>
-     <div className={toggleState === 2 ? 'px-3 py-1 text-[13px] bg-[#3ae516] text-white font-light rounded-sm uppercase mr-2 cursor-pointer' : 'px-3 py-1 text-[13px]  bg-[#3ae516] text-white font-light rounded-sm uppercase mr-2 cursor-pointer'}
+     <div className={toggleState === 2 ? 'px-3 py-1 text-[11px] tracking-wide  bg-[#3ae516] text-white font-light rounded-sm uppercase mr-2 cursor-pointer' : 'px-3 py-1 text-[13px]  bg-[#3ae516] text-white font-light rounded-sm uppercase mr-2 cursor-pointer'}
      onClick={() => toggleTab(2)}>
        Mint
      </div>
-     <div className={toggleState === 6 ? 'px-3 py-1 text-[13px] bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
+     <div className={toggleState === 6 ? 'px-3 py-1 text-[11px] tracking-wide bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
      onClick={() => toggleTab(6)}>
        About
      </div>
-     <div className={toggleState === 3 ? 'px-3 py-1 text-[13px] bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
+     <div className={toggleState === 3 ? 'px-3 py-1 text-[11px] tracking-wide  bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
      onClick={() => toggleTab(3)}>
        Utility
      </div>
-     <div className={toggleState === 4 ? 'px-3 py-1 text-[13px] bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
+     <div className={toggleState === 4 ? 'px-3 py-1 text-[11px] tracking-wide  bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
      onClick={() => toggleTab(4)}>
        Map
      </div>
-     <div className={toggleState === 5 ? 'px-3 py-1 text-[13px] bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
+     <div className={toggleState === 5 ? 'px-3 py-1 text-[11px] tracking-wide  bg-white text-black font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px] bg-black hover:bg-white hover:text-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
      onClick={() => toggleTab(5)}>
        FAQ
      </div>
@@ -137,7 +137,7 @@ export default function Navtabs (){
      </div>
      </a>
      */}
-     <div className={toggleState === 2 ? 'px-3 py-1 text-[13px] bg-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px]  bg-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
+     <div className={toggleState === 2 ? 'px-3 py-1 text-[11px] tracking-wide  bg-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer' : 'px-3 py-1 text-[13px]  bg-black text-white font-light rounded-sm uppercase mx-2 cursor-pointer'}
      onClick={() => toggleTab(2)}>
        Connect
      </div>
