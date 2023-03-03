@@ -228,10 +228,10 @@ className='w-auto h-[30px] cursor-pointer'
 
 <div className={!nav?'absolute w-full md:top-[90px] top-[110px] flex flex-col items-center ':'hidden'}>
 <div className='h-screen flex flex-col items-center'>
-  <img src='/skelee-homepage-icon.png' className='md:h-[100px] h-[50px] w-auto mt-8'/>
+  <img src='/skelee-homepage-icon.png' className='md:h-[300px] h-[150px] w-auto mt-8'/>
   <h1 className='text-[18px] tracking-wide text-center max-w-screen mt-8 font-LuckiestGuy uppercase text-white'>
     Welcome<br/>
-    to the world of Skelee <br/>
+    to the world of Skelee. <br/>
     A web 3 experience
   </h1>
   <button className='mt-5 rounded-md bg-[#3ae516] py-2 md:px-10 px-6 text-white font-mediumn font-Burbank uppercase'
