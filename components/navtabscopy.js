@@ -90,7 +90,7 @@ export default function Navtabs (){
 
 <div className='w-[50%]'>
 
-   <img src='/logo.png'
+   <img src='/skelee-homepage-button-new.png'
    className='w-auto h-[30px] cursor-pointer'
    onClick={() => toggleTab(1)}/>
 
@@ -152,7 +152,7 @@ export default function Navtabs (){
 <div className='md:hidden h-full w-screen filter backdrop-blur-sm flex flex-row items-center justify-between px-4 pt-2 z-20'>
 
 <a href='/'>
-<img src='/logo.png'
+<img src='/skelee-homepage-button-new.png'
 className='w-auto h-[30px] cursor-pointer'
 />
 </a>
