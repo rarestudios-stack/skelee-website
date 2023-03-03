@@ -228,13 +228,13 @@ className='w-auto h-[30px] cursor-pointer'
 
 <div className={!nav?'absolute w-full md:top-[90px] top-[110px] flex flex-col items-center ':'hidden'}>
 <div className='h-screen flex flex-col items-center'>
-  <img src='/Skelee-logo.png' className='md:h-[40px] h-[25px] w-auto mt-8'/>
-  <h1 className='text-[18px] tracking-wide text-center max-w-screen mt-8 font-LuckiestGuy'>
+  <img src='/skelee-homepage-icon.png' className='md:h-[40px] h-[25px] w-auto mt-8'/>
+  <h1 className='text-[18px] tracking-wide text-center max-w-screen mt-8 font-LuckiestGuy uppercase'>
     Welcome<br/>
-    to the world of Skelee, a community of <br/>
-    immortal gamers
+    to the world of Skelee <br/>
+    A web 3 experience
   </h1>
-  <button className='md:hidden mt-5 rounded-md bg-[#3ae516] py-2 px-6 text-white font-mediumn font-Burbank uppercase'
+  <button className='mt-5 rounded-md bg-[#3ae516] py-2 md:px-10 px-6 text-white font-mediumn font-Burbank uppercase'
   onClick={() => toggleTab(2)}>Mint</button>
   </div>
   <div className='w-full bg-black h-auto'>
