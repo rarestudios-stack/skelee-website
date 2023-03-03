@@ -47,7 +47,7 @@ export default function FAQs() {
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
           Stay updated on our Twitter and Discord account to see when the Mint will begin.
         </AccordionBody>
-      </Accordion>ent u
+      </Accordion>
       
       <Accordion open={open === 4} animate={customAnimation} className='text-white text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(4)} className='text-white  text-[21px] text-start'>
