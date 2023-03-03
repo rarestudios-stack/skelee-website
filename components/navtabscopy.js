@@ -182,22 +182,22 @@ className='w-auto h-[30px] cursor-pointer'
         </div>
     </div>
     <div className='flex flex-col items-start text-start mt-4 text-white'>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px] hover:text-blue-500' onClick={() => toggleTabInt(2)}>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px] hover:text-blue-500' onClick={() => toggleTabInt(2)}>
       MINT</div>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(6)}>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(6)}>
       About</div>              
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(3)}>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(3)}>
       Utility</div>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(4)}>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(4)}>
       Map</div>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(5)}>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]' onClick={() => toggleTabInt(5)}>
       FAQ</div>
       <a target='_blank' rel="noreferrer" href='https://twitter.com/skeleenft' className='w-full'>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]'>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]'>
       Twitter</div>
       </a>
       <a target='_blank' rel="noreferrer" href='/' className='w-full'>
-      <div className='w-full uppercase py-2 border-b-1 border-white tracking-wider font-semibold text-[18px]'>
+      <div className='w-full uppercase py-2 border-b border-white tracking-wider font-semibold text-[18px]'>
       Discord</div>
       </a>
       {/* <a target='_blank' rel="noreferrer" href='/' className='w-full'>
