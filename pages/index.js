@@ -14,9 +14,9 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Skelee-Demo</title>
-        <meta name="Description" content="Skulls Klubs LimitLess!" />
-        <link rel="icon" href="/Logoicon.png" />
+        <title>Skelee-NFTs</title>
+        <meta name="Description" content="Skelee Nfts" />
+        <link rel="icon" href="/skelee-favicon" />
       </Head>
 
         <Navtabs/>
