@@ -6,8 +6,10 @@ import {
   getTotalMinted,
   getMaxSupply,
   isPausedState,
-  isPublicSaleState,
-  publicMint          } from '../ulits/interact'
+  isFreeMint_Live,
+  isEarlyAccess_Live,
+  FreeMint, 
+  EarlyAccessMint         } from '../ulits/interact'
 
 import Countdown from "../components/countdown"
   
@@ -23,7 +25,8 @@ export default function Mint(){
   const [totalMinted, setTotalMinted] = useState(0)
   const [maxMintAmount, setMaxMintAmount] = useState(0)
   const [paused, setPaused] = useState(false)
-  const [isPublicSale, setIsPublicSale] = useState(false)
+  const [isEarlyAccessState, setIsEarlyAccessState] = useState(false)
+  const [isFreeMintState, setIsFreeMintState] = useState(false)
   
 
   const [status, setStatus] = useState(null)
@@ -36,13 +39,15 @@ export default function Mint(){
     const init = async () => {
       setMaxSupply(await getMaxSupply())
       setTotalMinted(await getTotalMinted())
+      
 
       setPaused(await isPausedState())
-      const isPublicSale = await isPublicSaleState()
-      setIsPublicSale(isPublicSale)
+      setIsFreeMintState(await isFreeMint_Live() && totalMinted < 10)  // change when mainnet
+      setIsEarlyAccessState(await isEarlyAccess_Live())
+      
 
       setMaxMintAmount(
-        isPublicSale ? config.maxMintAmount : '0'
+        isEarlyAccessState ? config.maxMintAmount_EarlyAccess: config.maxMintAmount_FreeMint
       )
       
       
@@ -93,10 +98,23 @@ useEffect(() => {
   }
 
 
-  const publicMintHandler = async () => {
+  const EarlyAccessMintHandler = async () => {
     setIsMinting(true)
 
-    const { success, status } = await publicMint(mintAmount)
+    const { success, status } = await EarlyAccessMint(mintAmount)
+
+    setStatus({
+      success,
+      message: status
+    })
+
+    setIsMinting(false)
+  }
+
+  const FreeMintHandler = async () => {
+    setIsMinting(true)
+
+    const { success, status } = await FreeMint(mintAmount)
 
     setStatus({
       success,
@@ -195,28 +213,32 @@ onClick={connectWalletHandler}>Connect Wallet</button>
                     </svg>
                   </button> 
                   <button className='px-10 py-3 bg-black rounded-lg hover:bg-white hover:text-black ml-16'
-onClick={publicMintHandler}>Mint</button>
+onClick={isEarlyAccessState ? FreeMintHandler : EarlyAccessMintHandler}>Mint</button>
                 </div>
                 </>
+                
+                
             )    
-           }     
-
-</div>
-
-<div className="font-Kanit max-w-screen-sm">
+           } 
+           
+           <div className="font-Kanit max-w-screen-sm mt-4">
               {status && (
               <div
                 className={`border ${
                   status.success ? 'border-green-500 text-white' : 'border-red-600 text-white'
                 } rounded-md text-start h-full px-4 py-4 w-full mx-auto mt-8 md:mt-5"`}
               >
-                <p className="flex flex-col space-y-2 text-sm md:text-base break-words ...">
+                <p className="flex flex-col w-auto">
                   {status.message}
                 </p>
               </div>
             )}
             </div> 
+</div>    
+
 </div>
+
+
 
 </div>
 

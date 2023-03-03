@@ -12,22 +12,22 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
 
   string public baseURI;
   string public baseExtension = ".json";
-  string public notRevealedUri; 
+  string public notRevealedUri; //set when ready deploy
 
-  uint256 public NewFriendsMintcost = 0.08 ether;
-  uint256 public cost = 0.125 ether;
+  uint256 public EarlyAccessCost = 0.125 ether; 
   uint256 public wlCost = 0 ether;
   uint256 public maxSupply = 7777;
-  uint256 public NewFriendsSupply = 1000;
+  uint256 public FreeMintSupply = 10;  /// change value on mainnet deployment
   uint256 public MaxperWallet = 5;
   uint256 public MaxperWalletWL = 1;
+  uint256 public MaxperWalletFreeMint = 1;
+  
 
-  bool public paused = true;
+  bool public paused = false; /// change state on mainnet deployment
   bool public revealed = false;
   bool public wlMint = false;
-  bool public NewFriendsMint_Live = true;
-  bool public EarlyAccessMint_Live = true;
-  bool public  FreeMint_Live = true;
+  bool public EarlyAccess_Live = true; 
+  bool public FreeMint_Live = true; 
 
   bytes32 public merkleRoot = 0;
 
@@ -46,47 +46,33 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
         return 1;
     }
 
- // Free Mint
-  function FreeMint(uint256 tokens) publinonReentrant {
-    require(!paused, "oops contract is paused");
-    require( FreeMint_Live, "Sale Hasn't started yet");
-    uint256 supply = totalSupply();
-    require(tokens > 0, "need to mint at least 1 NFT");
-    require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
-    require(supply + tokens <= maxSupply, "We Soldout");
-    require(supply + tokens <= NewFriendsSupply, "New Friends mint supply reached max");
-    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFT Per Wallet exceeded");
-
-      _safeMint(_msgSender(), tokens);
-    
-  }
-
-  // New Friends Mint
-  function NewFriendsMint(uint256 tokens) public payable nonReentrant {
-    require(!paused, "oops contract is paused");
-    require(NewFriendsMint_Live, "Sale Hasn't started yet");
-    uint256 supply = totalSupply();
-    require(tokens > 0, "need to mint at least 1 NFT");
-    require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
-    require(supply + tokens <= maxSupply, "We Soldout");
-    require(supply + tokens <= NewFriendsSupply, "New Friends mint supply reached max");
-    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFT Per Wallet exceeded");
-    require(msg.value >= NewFriendsMintcost * tokens, "insufficient funds");
-
-      _safeMint(_msgSender(), tokens);
-    
-  }
-
-//  Early Access Mint
+  // public-mint(EarlyAccess)
   function EarlyAccessMint(uint256 tokens) public payable nonReentrant {
     require(!paused, "oops contract is paused");
-    require(EarlyAccessMint_Live, "Sale Hasn't started yet");
+    require(EarlyAccess_Live, "Sale Hasn't started yet");
+    uint256 supply = totalSupply();
+    require(supply >= FreeMintSupply ,"This mint phase will start after FreeMint phase");
+    require(tokens > 0, "need to mint at least 1 NFT");
+    require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
+    require(supply + tokens <= maxSupply, "We Soldout");
+    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFTs Per Wallet exceeded");
+    require(msg.value >= EarlyAccessCost * tokens, "insufficient funds");
+
+      _safeMint(_msgSender(), tokens);
+    
+  }
+
+// FreeMint
+function FreeMint(uint256 tokens) public nonReentrant {
+    require(!paused, "oops contract is paused");
+    require(FreeMint_Live, "Sale Hasn't started yet");
     uint256 supply = totalSupply();
     require(tokens > 0, "need to mint at least 1 NFT");
     require(tokens <= MaxperWallet, "max mint amount per tx exceeded");
     require(supply + tokens <= maxSupply, "We Soldout");
-    require(_numberMinted(_msgSender()) + tokens <= MaxperWallet, " Max NFT Per Wallet exceeded");
-    require(msg.value >= cost * tokens, "insufficient funds");
+    require(supply + tokens <= FreeMintSupply, "We Soldout");
+    require(_numberMinted(_msgSender()) + tokens <= MaxperWalletFreeMint, " Max NFTs Per Wallet exceeded");
+
 
       _safeMint(_msgSender(), tokens);
     
@@ -167,13 +153,12 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
     MaxperWalletWL = _limit;
   }
 
-  
-  function setNewFriendsMintCost(uint256 _newCost) public onlyOwner {
-    NewFriendsMintcost = _newCost;
+   function setMaxperWalletFreeMint(uint256 _limit) public onlyOwner {
+    MaxperWalletFreeMint = _limit;
   }
-
-   function setCost(uint256 _newCost) public onlyOwner {
-    cost = _newCost;
+  
+  function setEarlyAccessCost(uint256 _newCost) public onlyOwner {
+    EarlyAccessCost = _newCost;
   }
   
   function setwlCost(uint256 _newCost) public onlyOwner {
@@ -185,13 +170,10 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
     maxSupply = _newsupply;
   }
 
-  
-
-    function setNewFriendsSupply(uint256 _newsupply) public onlyOwner {
-    NewFriendsSupply = _newsupply;
+  function setFreeMintSupply(uint256 _newsupply) public onlyOwner {
+    FreeMintSupply = _newsupply;
   }
 
- 
   function setBaseURI(string memory _newBaseURI) public onlyOwner {
     baseURI = _newBaseURI;
   }
@@ -212,12 +194,12 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
         wlMint = _state;
     }
 
-    function toggleNewFriendsMint(bool _state) external onlyOwner {
-         NewFriendsMint_Live = _state;
+    function toggle_EarlyAccess_Live(bool _state) external onlyOwner {
+        EarlyAccess_Live = _state;
     }
 
-    function toggleEarlyAccessMint(bool _state) external onlyOwner {
-          EarlyAccessMint_Live = _state;
+    function toggle_FreeMint_Live(bool _state) external onlyOwner {
+        FreeMint_Live = _state;
     }
   
  

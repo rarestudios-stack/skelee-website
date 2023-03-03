@@ -5,12 +5,12 @@ const _initBaseURI='ipfs://bafybeiekw4svr3jn2romogzecdmx4xz2khz3vfih3eaxfrvsjbkm
 async function main() {
 
   // Deploy the contract
-  const skll = await hre.ethers.getContractFactory('SKLL')
-  const SKLL = await skll.deploy(
+  const skelee = await hre.ethers.getContractFactory('Skelee')
+  const Skelee = await skelee.deploy(
     _initBaseURI)
-  await SKLL.deployed()
+  await Skelee.deployed()
 
-  console.log('SKLL deployed to:', SKLL.address)
+  console.log('Skelee deployed to:', Skelee.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
