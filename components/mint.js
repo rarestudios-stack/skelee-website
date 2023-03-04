@@ -6,9 +6,11 @@ import {
   getTotalMinted,
   getMaxSupply,
   isPausedState,
-  isFreeMint_Live,
+  isSkeleeFriendsMint_Live,
   isEarlyAccess_Live,
-  FreeMint, 
+  isPublicMint_Live,
+  PublicMint, 
+  SkeleeFriendsMint,
   EarlyAccessMint         } from '../ulits/interact'
 
 import Countdown from "../components/countdown"
@@ -26,7 +28,8 @@ export default function Mint(){
   const [maxMintAmount, setMaxMintAmount] = useState(0)
   const [paused, setPaused] = useState(false)
   const [isEarlyAccessState, setIsEarlyAccessState] = useState(false)
-  const [isFreeMintState, setIsFreeMintState] = useState(false)
+  const [isSkeleeFriendsState, setIsSkeleeFriendsState] = useState(false)
+  const [isPublicMintState , setIsPublicMintState] = useState (false)
   
 
   const [status, setStatus] = useState(null)
@@ -42,12 +45,13 @@ export default function Mint(){
       
 
       setPaused(await isPausedState())
-      setIsFreeMintState(await isFreeMint_Live() && totalMinted < 10)  // change when mainnet
+      setIsSkeleeFriendsState(await isSkeleeFriendsMint_Live())
       setIsEarlyAccessState(await isEarlyAccess_Live())
+      setIsPublicMintState(await isPublicMint_Live())
       
 
       setMaxMintAmount(
-        isEarlyAccessState ? config.maxMintAmount_EarlyAccess: config.maxMintAmount_FreeMint
+        isPublicMintState ? config.maxMintAmount_PublicMint :  isEarlyAccessState ? config.maxMintAmount_EarlyAccess : config.maxMintAmount_SkeleeFriendsMint
       )
       
       
@@ -111,10 +115,10 @@ useEffect(() => {
     setIsMinting(false)
   }
 
-  const FreeMintHandler = async () => {
+  const SkeleeFriendsMintHandler = async () => {
     setIsMinting(true)
 
-    const { success, status } = await FreeMint(mintAmount)
+    const { success, status } = await SkeleeFriendsMint(mintAmount)
 
     setStatus({
       success,
@@ -123,6 +127,20 @@ useEffect(() => {
 
     setIsMinting(false)
   }
+
+  const PublicMintHandler = async () => {
+    setIsMinting(true)
+
+    const { success, status } = await PublicMint(mintAmount)
+
+    setStatus({
+      success,
+      message: status
+    })
+
+    setIsMinting(false)
+  }
+
   return (
     <div className='font-Kanit text-white min-h-screen w-screen flex flex-col items-center justify-start lg:px-20 px-6 relative'>
 
@@ -212,8 +230,10 @@ onClick={connectWalletHandler}>Connect Wallet</button>
                       />
                     </svg>
                   </button> 
-                  <button className='px-10 py-3 bg-black rounded-lg hover:bg-white hover:text-black ml-16'
-onClick={isEarlyAccessState ? FreeMintHandler : EarlyAccessMintHandler}>Mint</button>
+                  <button className={paused || isMinting ?'px-10 py-3 bg-gray-700/40 rounded-lg ml-16 cursor-disabled' :'px-10 py-3 bg-black rounded-lg hover:bg-white hover:text-black ml-16'}
+onClick={isPublicMintState? PublicMintHandler : isEarlyAccessState? EarlyAccessMintHandler : SkeleeFriendsMintHandler}
+disabled={paused || isMinting}
+>Mint</button>
                 </div>
                 </>
                 
