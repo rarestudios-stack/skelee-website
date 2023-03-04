@@ -1,13 +1,13 @@
 require ('@nomiclabs/hardhat-etherscan')
 const hre = require( 'hardhat')
 
-const _initBaseURI='ipfs://bafybeiekw4svr3jn2romogzecdmx4xz2khz3vfih3eaxfrvsjbkmknod6u/'
+const _initBaseURI='ipfs://QmRdY2b8nrvjZ9mM3qgQMLLAYjby6szQg9WX9PspcvBKHx/'
 
 
 async function main() {
 
   await hre.run('verify:verify', {
-    address: '0x1682C9098b7C1039868eDBD3b2d66DB97c4cA985',
+    address: '0x62c62c019BffcdDeD59b601ed7a53479473C81eB',
     constructorArguments: [_initBaseURI]
   })
 }

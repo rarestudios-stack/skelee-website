@@ -21,8 +21,8 @@ export const isPausedState = async () => {
   return paused
 }
 
-export const isFreeMint_Live = async () => {
-  const publicSale = await nftContract.methods.FreeMint_Live().call()
+export const isSkeleeFriendsMint_Live = async () => {
+  const publicSale = await nftContract.methods.SkeleeFriendsMint_Live().call()
   return publicSale
 }
 

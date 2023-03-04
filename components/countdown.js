@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function Countdown(){
 
 const calculateTimeLeft = () => {
-    const difference = +new Date("2023-03-02T12:09:05+00:00") - +new Date();
+    const difference = +new Date("2023-03-05T12:30:13+00:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

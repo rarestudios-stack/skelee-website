@@ -21,8 +21,8 @@ module.exports = {
   
   networks: {
     hardhat: {},
-    maiinet: {
-      url: `${process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL}`,
+    mainnet: {
+      url: `${process.env.NEXT_PUBLIC_ALCHEMY_RPC_UR}`,
       accounts: [`0x${process.env.METAMASK_PRIVATE_KEY}`]
     }
   },
