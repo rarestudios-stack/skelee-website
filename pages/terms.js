@@ -6,8 +6,8 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Skelee-Demo</title>
-        <meta name="Description" content="Skulls Klubs LimitLess!" />
+        <title>Skelee-Web3</title>
+        <meta name="Description" content="Skelee Terms" />
         <link rel="icon" href="/Logoicon.png" />
       </Head>
         

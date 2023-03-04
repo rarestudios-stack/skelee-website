@@ -14,7 +14,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Skelee-NFTs</title>
+        <title>Skelee-Web3</title>
         <meta name="Description" content="Skelee Nfts" />
         <link rel="icon" href="/favicon_io/favicon-32x32.png" />
       </Head>
