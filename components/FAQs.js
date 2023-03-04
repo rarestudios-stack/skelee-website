@@ -182,7 +182,7 @@ To gain access to the Skelee Gaming Champions League, holders must obtain both t
          Who created Skelee?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-        Rare Studios New York, and we are all in on WEB 3 gaming and AR immersive experiences.
+        Rare Studios New York & Ethereum.jpg
         </AccordionBody>
       </Accordion>
       
