@@ -26,8 +26,13 @@ export const isSkeleeFriendsMint_Live = async () => {
   return publicSale
 }
 
-export const isEarlyAccess_Live = async () => {
-  const publicSale = await nftContract.methods.EarlyAccess_Live().call()
+export const isEarlyAccessMint_Live = async () => {
+  const publicSale = await nftContract.methods.EarlyAccessMint_Live().call()
+  return publicSale
+}
+
+export const isPublicMint_Livee = async () => {
+  const publicSale = await nftContract.methods.PublicMint_Live().call()
   return publicSale
 }
 
@@ -50,8 +55,7 @@ export const EarlyAccessMint = async (mintAmount) => {
   if (AbleToMint <  mintAmount){
     return {
       success: false,
-      status: '📌 You have already minted ' + numberMinted +' NFT/s ' +
-       'You are able to mint only '+ AbleToMint +' more NFT/s ' 
+      status: '📌 Exceed max mint amount per wallet' 
     }
   }
 
