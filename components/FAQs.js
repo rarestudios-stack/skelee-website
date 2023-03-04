@@ -76,14 +76,14 @@ export default function FAQs() {
         </AccordionBody>
       </Accordion>
 
-      <Accordion open={open === 7} animate={customAnimation} className='text-white text-[21px] text-start'>
+      {/* <Accordion open={open === 7} animate={customAnimation} className='text-white text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(7)} className='text-white  text-[21px] text-start'>
           What are the licensing right / Intellectual property?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
         Non-Commercial. However Commercial rights will be granted in the future once we complete our road map.
         </AccordionBody>
-      </Accordion>
+      </Accordion> */}
 
       <Accordion open={open === 8} animate={customAnimation} className='text-white text-[21px] text-start'>
         <AccordionHeader onClick={() => handleOpen(8)} className='text-white  text-[21px] text-start'>
