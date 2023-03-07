@@ -33,7 +33,7 @@ export default function Countdown(){
   }, [])
 
 const calculateTimeLeft = () => {
-    const difference = +new Date("2023-03-10T20:00:00+0600") - +new Date();
+    const difference = +new Date("2023-03-09T20:00:00+0600") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
