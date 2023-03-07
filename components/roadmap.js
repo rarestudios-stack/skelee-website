@@ -16,6 +16,7 @@ return (
       <img src="/skelees-arrival.png" className='w-[300px] h-[300px] md:mx-16 mx-4 hidden md:flex'/>
       <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
         <span className="uppercase text-[#3ae516] text-[40px]">THE ARRIVAL</span><br/><br/>
+        <span className="uppercase">Stage 1</span><br/><br/>
          <span className="uppercase md:hidden">Skelee’s have arrived from the underworld. A community of gamers and late-night friends will join together in an epic adventure to victory.</span>
         <span className="uppercase hidden md:flex">Skelee’s have arrived from the underworld.</span>
         <span className="uppercase hidden md:flex"> A community of gamers and late-night friends <br/> will join together in an epic adventure  <br/>to victory.</span>
@@ -26,7 +27,7 @@ return (
     <div className="flex md:flex-row flex-col items-center justify-center mt-8">
       <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
         <span className="uppercase text-[#3ae516] text-[40px]">THE League</span><br/>
-        <span className="uppercase">q3 2023</span><br/><br/>
+        <span className="uppercase">Stage 2</span><br/><br/>
         <span>Holders will have access to join our</span><br/>
         <span>late-night gaming portal</span><br/>
         <span>to claim Skelee’s league pass!</span>
@@ -37,7 +38,7 @@ return (
     <div className="flex md:flex-row flex-col items-center justify-center mt-8">
       <img src="/roadmap-beta-championsleague.png" className='w-[300px] h-[300px] md:mx-16 mx-4 hidden md:flex'/>
       <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
-        <span className="uppercase text-[#3ae516] text-[40px]">Champion beta league<br/></span>Q4 2023<br/><br/>
+        <span className="uppercase text-[#3ae516] text-[40px]">Champion beta league<br/></span>Stage 3<br/><br/>
         <span>Skelee holders<br/>will beta-test and compete in the <br/>champions league portal system.</span><br/>
       </p>
       <img src="/roadmap-beta-championsleague.png" className='w-[300px] h-[300px] md:mx-16 mx-4 md:hidden'/>
@@ -46,7 +47,7 @@ return (
     <div className="flex md:flex-row flex-col items-center justify-center mt-8">
       <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
         <span className="uppercase text-[#3ae516] text-[40px]">Ar experience</span><br/>
-        <span className="uppercase ">q1 2024</span><br/><br/>
+        <span className="uppercase ">Stage 4</span><br/><br/>
         <span>Experience Skelee</span><br/>
         <span>in an augmented reality.</span><br/>
         <span>Holders must finish a quest to receive <span className='md:hidden'>an Augmented Reality Skelee Boot.</span></span><br/>
@@ -58,13 +59,24 @@ return (
     <div className="flex md:flex-row flex-col items-center justify-center mt-8">
       <img src="/skelee-roadmap-champions-league.png" className='w-[300px] h-[300px] md:mx-16 mx-4 hidden md:flex'/>
       <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
-        <span className="uppercase text-[#3ae516] text-[40px]">Champion league<br/></span>Q2 2024<br/><br/>
+        <span className="uppercase text-[#3ae516] text-[40px]">Champion league<br/></span>Stage 5<br/><br/>
         <span>The 100 top Skelee holders 
         <br/>of the champions beta league
         <br/>will have a chance to compete for
         <br/>prize money and rewards.</span><br/>
       </p>
       <img src="/skelee-roadmap-champions-league.png" className='w-[300px] h-[300px] md:mx-16 mx-4 md:hidden'/>
+    </div>
+
+
+    <div className="flex md:flex-row flex-col items-center justify-center mt-8">
+      <p className="mx-4 w-auto h-auto text-start md:text-[22px] text-[18px] md:mx-16 mx-4">
+        <span className="uppercase text-[#3ae516] text-[40px]">Future Plans</span><br/>
+        <span className="uppercase ">Stage 6</span><br/><br/>
+        <span>Find us on a beach</span><br/>
+        <span>somewhere in the Metaverse.</span><br/>
+      </p>
+      <img src="/skelee-boot-ar.png" className='w-[300px] h-[300px] md:mx-16 mx-4'/>
     </div>
 
   </div>

@@ -17,8 +17,8 @@ export default function About() {
       <img src='/Skelee-logo.png' className='h-[50px] w-auto mb-6'/>
       
       <p className="text-center font-light text-lg md:w-[600px]">
-      Welcome to an immortal gamer’s paradise, AKA SKELEE. A non-fungible token, that brings
-together a community of late-night gamers from all around the world. Skelee is a collection of 7777 unique NFTs on the Ethereum blockchain. Inspired by late night gaming, Beeple, 3D art, and a friend that never gave up on us.<br/> <br/>
+      Welcome to an immortal gamer’s paradise. Skelee, non-fungible token, that brings
+together a community of late-night gamers from all around the world. Skelee is a collection of 7777 unique NFTs on the Ethereum blockchain.<br/> <br/>
 
 We released Skelee from the underworld to show him the other side of life. A life filled with gaming, friends, competitions and augmented reality experiences. This is just the beginning, Rare Studios New York is our laboratory and we were created in the hands of ethereum.jpg. Join us for the gaming, stay for the family we build.
 </p>
