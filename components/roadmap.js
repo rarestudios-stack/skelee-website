@@ -76,7 +76,7 @@ return (
         <span>Find us on a beach</span><br/>
         <span>somewhere in the Metaverse.</span><br/>
       </p>
-      <img src="/skelee-boot-ar.png" className='w-[300px] h-[300px] md:mx-16 mx-4'/>
+      {/* <img src="/skelee-boot-ar.png" className='w-[300px] h-[300px] md:mx-16 mx-4'/> */}
     </div>
 
   </div>
