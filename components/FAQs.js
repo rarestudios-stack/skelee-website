@@ -27,16 +27,7 @@ export default function FAQs() {
           What is Skelee NFT?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-        Skelee is a collection of 8,000 unique NFTs on the Ethereum blockchain. Inspired by late-night gaming, Beeple, 3D art, and a friend that never gave up on us. We released Skelee from the underworld to show him the other side of life. Filled with gaming, friends, competitions, and augmented reality experiences, Skelee has a lot to explore.
-        </AccordionBody>
-      </Accordion>
-      
-      <Accordion open={open === 2} animate={customAnimation} className='text-white  text-[21px] text-start'>
-        <AccordionHeader onClick={() => handleOpen(2)} className='text-white  text-[21px] text-start'>
-          What is Mint amount?
-        </AccordionHeader>
-        <AccordionBody className='text-start text-gray-300 text-[20px]'>
-       7777
+        Skelee is a collection of 7,777 unique NFTs on the Ethereum blockchain. Inspired by late-night gaming, Beeple, 3D art, and a friend that never gave up on us. We released Skelee from the underworld to show him the other side of life. Filled with gaming, friends, competitions, and augmented reality experiences, Skelee has a lot to explore.
         </AccordionBody>
       </Accordion>
       
@@ -72,7 +63,7 @@ export default function FAQs() {
           Who can mint Skelee?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-        Anyone who has Ethers
+        Anyone
         </AccordionBody>
       </Accordion>
 
@@ -173,7 +164,7 @@ To gain access to the Skelee Gaming Champions League, holders must obtain both t
           What is the royalty %?
         </AccordionHeader>
         <AccordionBody className='text-start text-gray-300 text-[20px]'>
-        10% goes back to development.
+        10%
         </AccordionBody>
       </Accordion>
       

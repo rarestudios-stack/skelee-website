@@ -156,7 +156,7 @@ className='w-[400px] h-auto'/>
 
 <div className='flex flex-col items-center justify-start w-full md:px-6 px-2 py-3 filter backdrop-blur-md'>
 <div className='md:flex justify-between w-full items-center'>
-<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>New friends mint <br/> 03/2023</h1>
+<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>Skelee friends mint <br/> 10/03/2023</h1>
 <h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>early access mint <br/> 03/2023</h1>
 </div>
 
@@ -168,9 +168,9 @@ className='w-[400px] h-auto'/>
 </div>
 
 <div className='flex justify-between w-full font-medium mt-4 md:px-4'>
-<h1 className='md:text-lg text-center'>Mint Price<br/>.125 ETH</h1>
+<h1 className='md:text-lg text-center'>Mint Price<br/>tbd</h1>
 <h1 className='md:text-lg text-center'>Total Supply<br/>7777</h1>
-<h1 className='md:text-lg text-center'>Reveal Time<br/>MARCH 2023</h1>
+<h1 className='md:text-lg text-center'>Reveal<br/>MARCH 2023</h1>
 
 </div>
 {/* mobile section */}
