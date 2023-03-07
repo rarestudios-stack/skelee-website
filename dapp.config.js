@@ -3,7 +3,7 @@ const RPC_URL = process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
 const config = {
   title: 'Dapp',
   description: 'test minting Dapp',
-  contractAddress: '0xE98e1f505edD9b1aa369D7f965e6F12dD269b123',
+  contractAddress: '0xf385Bd1e63bAfD687B2474Bbaf90d648e952eaBE', // enforced contract
   maxMintAmount_EarlyAccess: 2,
   maxMintAmount_SkeleeFriendsMint:1,
   maxMintAmount_PublicMint: 5,

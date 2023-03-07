@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.9; 
+pragma solidity >=0.8.13; 
 
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+import "operator-filter-registry/src/DefaultOperatorFilterer.sol";
 
-contract Skelee is ERC721A, Ownable, ReentrancyGuard {
+contract Skelee is ERC721A, Ownable, ReentrancyGuard, DefaultOperatorFilterer {
   using Strings for uint256;
 
   string public baseURI;
@@ -45,8 +46,43 @@ contract Skelee is ERC721A, Ownable, ReentrancyGuard {
   function _baseURI() internal view virtual override returns (string memory) {
     return baseURI;
   }
-      function _startTokenId() internal view virtual override returns (uint256) {
-        return 0;
+  function _startTokenId() internal view virtual override returns (uint256) {
+      return 0;
+  }
+
+    //Operator Filter
+    function setApprovalForAll(address operator, bool approved) public override onlyAllowedOperatorApproval(operator) {
+        super.setApprovalForAll(operator, approved);
+    }
+
+    function approve(address operator, uint256 tokenId) public payable override onlyAllowedOperatorApproval(operator) {
+        super.approve(operator, tokenId);
+    }
+    function transferFrom(address from, address to, uint256 tokenId)
+        public
+        payable
+             override
+        onlyAllowedOperator(from)
+    {
+        super.transferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId)
+        public
+        payable
+           override
+        onlyAllowedOperator(from)
+    {
+        super.safeTransferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data)
+        public
+        payable
+          override
+        onlyAllowedOperator(from)
+    {
+        super.safeTransferFrom(from, to, tokenId, data);
     }
 
 

@@ -7,7 +7,7 @@ const _initBaseURI='ipfs://QmRdY2b8nrvjZ9mM3qgQMLLAYjby6szQg9WX9PspcvBKHx/'
 async function main() {
 
   await hre.run('verify:verify', {
-    address: '0x62c62c019BffcdDeD59b601ed7a53479473C81eB',
+    address: '0xf385Bd1e63bAfD687B2474Bbaf90d648e952eaBE',
     constructorArguments: [_initBaseURI]
   })
 }
