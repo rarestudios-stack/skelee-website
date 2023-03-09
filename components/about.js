@@ -20,7 +20,7 @@ export default function About() {
       Welcome to an immortal gamer’s paradise. Skelee, non-fungible token, that brings
 together a community of late-night gamers from all around the world. Skelee is a collection of 7777 unique NFTs on the Ethereum blockchain.<br/> <br/>
 
-We released Skelee from the underworld to show him the other side of life. A life filled with gaming, friends, competitions and augmented reality experiences. This is just the beginning, Rare Studios New York is our laboratory and we were created in the hands of ethereum.jpg. Join us for the gaming, stay for the family we build.
+We released Skelee from the underworld to show him the other side of life. A life filled with gaming, friends, competitions and augmented reality experiences. This is just the beginning, Skelee was developed and created by Rare Studios New York & ethereum.jpg, a small group of web3 developers, industry professionals, and game enthusiasts and a profound 3D artist. Join us for the gaming, stay for the family we build.
 </p>
 </div>
 
