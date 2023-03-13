@@ -71,17 +71,21 @@ const calculateTimeLeft = () => {
       <h1 className='w-full h-full text-3xl text-center'>Will be Live soon!</h1>
       )
       : isSkeleeFriendsState ? (
-        <h1 className='w-full h-full text-3xl text-center'>Skelee Friends Mint</h1>
+        <h1 className='w-full h-full text-3xl text-center'>Skelee Friends Mint Open</h1>
       ) : 
       isEarlyAccessState? (
         
-      <h1 className='w-full h-full text-3xl text-center'>Early Access Mint</h1>
+      <h1 className='w-full h-full text-3xl text-center'>Early Access Open</h1>
       ) 
       : (
-        <h1 className='w-full h-full text-3xl text-center'>Public Mint</h1>
+        <h1 className='w-full h-full text-3xl text-center'>Public Mint Open</h1>
       ) 
       }
     </div>
      </>
     )
 }
+
+//the text 'will be live soon' is working like this
+// when the coundown is over it checks if the contract is paused? if yes it will show ' will be live soon'
+//if not paused it will check if the contract is in skelee friends mint state. if yes if will show s. Oh, ok. Then lets have it 
