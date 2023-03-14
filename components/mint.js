@@ -156,8 +156,8 @@ className='w-[400px] h-auto'/>
 
 <div className='flex flex-col items-center justify-start w-full md:px-6 px-2 py-3 filter backdrop-blur-md'>
 <div className='md:flex justify-between w-full items-center'>
-<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>Skelee friends mint <br/>TBD</h1>
-<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>early access mint <br/>TBD</h1>
+<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>Skelee friends mint <br/> tbd </h1>
+<h1 className='text-lg text-center uppercase md:mt-0 mt-4 font-LuckiestGuy'>early access mint <br/> tbd </h1>
 </div>
 
 {/* countdown */}
